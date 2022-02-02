@@ -1,4 +1,5 @@
 import {FiLink} from 'react-icons/fi'
+import './home.css'
 
 function Home() {
   return (
@@ -12,11 +13,14 @@ function Home() {
       <div className="area-input">
         <div>
           <FiLink size={24} color='#FFF'/>
+          <input placeholder='Cole seu link aqui...'/>  
         </div>
-        <input placeholder='Cole seu link aqui...'/>      
+          
+        <button>Encurtar Link</button>
+        
       </div>
 
-      <button>Encurtar Link</button>
+      
 
     </div>
   );
