@@ -1,0 +1,35 @@
+.menu{
+    position: absolute;
+    top:20px;
+    right: 10px;
+    font-weight: bold; /* Deixa negrito */
+    display: flex;
+}
+
+.menu a{
+    text-decoration: none;
+}
+
+.social{
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+    transition: transform .4s
+}
+.menu-item{
+    color: black;
+    background-color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    margin-right: 14px;
+    transition: transform .4s;
+     
+}
+
+.menu-item:hover{
+    transform: scale(1.09);
+}
+
+.social:hover{
+    transform: scale(1.50);
+}

@@ -1,0 +1,81 @@
+.container-links{
+    max-width: 600px;
+    margin: 32px auto 0 auto; /* 32px do topo e auto esquerda direita para continuar centralizado, quando diminuirmos a pagina  */
+}
+
+.links-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.links-header svg{
+    margin-right:20px;
+}
+
+.links-header h1{
+    color: aliceblue;
+}
+
+.links-item{
+    width: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+.links-item:last-child{
+    margin-bottom: 18px;
+}
+
+.link{
+    border:0;
+    width: 100%;
+    min-width: 80%;
+    border-radius: 4px;
+    height: 46px;
+    background-color: rgb(255,255,255,0.15);
+    align-items: center;
+    padding: 0, 14px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.link svg{
+    margin-right: 14px;
+}
+
+.link{
+    white-space: nowrap; /* o link não vai quebra a linha do input */
+    overflow: hidden;       /* O link não vai passar da linha do input */
+    text-overflow: ellipsis;
+}
+
+.link-delete{
+    border: 0;
+    background: transparent;
+}
+
+@media (max-width: 715px){
+    .container-links{
+        width: 90%;
+    }
+
+    .logo h1{
+        font-size: 40px;
+    }
+
+    .links-item{
+        width: 100%;
+    }
+
+    .link{
+        width:100%;
+    }
+
+    /* Tira o icon de link quando diminui */
+    .link svg{
+        display: none;
+    }
+    
+}
