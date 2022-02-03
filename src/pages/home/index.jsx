@@ -8,6 +8,10 @@ function Home() {
 
   const [link, setLink] = useState('')
 
+  function shortLink(){
+        
+  }
+
   return (
     <div className="container-home">
       <div className="logo">
@@ -26,7 +30,7 @@ function Home() {
           />  
         </div>
           
-        <button>Encurtar Link</button>
+        <button onClick={shortLink}>Encurtar Link</button>
       </div>
 
       <Menu/>
