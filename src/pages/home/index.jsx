@@ -3,13 +3,14 @@ import {FiLink} from 'react-icons/fi'
 import './home.css'
 
 import Menu from '../../components/Menu/menu';
+import LinkItem from '../../components/LinkItem/LinkItem';
 
 function Home() {
 
   const [link, setLink] = useState('')
 
   function shortLink(){
-        
+
   }
 
   return (
@@ -34,6 +35,7 @@ function Home() {
       </div>
 
       <Menu/>
+      <LinkItem/>
 
     </div>
   );
