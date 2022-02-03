@@ -8,9 +8,10 @@ import LinkItem from '../../components/LinkItem/LinkItem';
 function Home() {
 
   const [link, setLink] = useState('')
+  const [showModal, setShowModal] = useState(false)
 
-  function shortLink(){
-
+  function shortLink(){   
+    setShowModal(true)
   }
 
   return (
@@ -35,7 +36,11 @@ function Home() {
       </div>
 
       <Menu/>
-      <LinkItem/>
+      
+      {/* Renderização de condição se o showModal estiver true aparece se estiver false não será renderizado */}
+      { showModal && (
+        <LinkItem/>
+      )}
 
     </div>
   );
