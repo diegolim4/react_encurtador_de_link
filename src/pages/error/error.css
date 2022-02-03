@@ -17,6 +17,23 @@
 .container-error img{
     max-width: 200px;
     margin: 10px 0;
+    animation: shake 2.3s;
+}
+
+/* Animação do shake. */
+@keyframes shake{
+    10%, 90%{
+        transform:translate3d(-3px, 0, 0); /* left */
+    }
+    20%, 80%{
+        transform: translate3d(5px, 0, 0); /* right */
+    }
+    30%, 50%, 70%{
+        transform: translate3d(-3px,-0, 0);
+    }
+    40%, 60%{
+        transform: translate3d(2px, 0, 0);
+    }
 }
 
 .container-error a{
