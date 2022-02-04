@@ -7,6 +7,19 @@
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    animation: slide .4s;
+}
+
+/* animação modal  */
+
+@keyframes slide{
+    from{
+        transform: translateX(300px);
+
+    }
+    to{
+        transform: translateX(0);
+    }
 }
 .modal-header{
     display: flex;
