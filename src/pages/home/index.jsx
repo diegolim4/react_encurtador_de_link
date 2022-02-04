@@ -39,7 +39,10 @@ function Home() {
       
       {/* Renderização de condição se o showModal estiver true aparece se estiver false não será renderizado */}
       { showModal && (
-        <LinkItem/>
+        <LinkItem
+        closeModal={()=> setShowModal(false) } /* propriedade close modal */
+        />
+        
       )}
 
     </div>

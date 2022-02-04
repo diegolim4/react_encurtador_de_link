@@ -1,13 +1,13 @@
-import './linkItem.css'
+ import './linkItem.css'
 import {FiX, FiClipboard } from 'react-icons/fi'
 
-export default LinkItem =>{
+export default function LinkItem ({closeModal}){ //Chamando a propriedade close modal
     return(
         <div className="modal-container">
 
             <div className="modal-header">
                 <h4>Link Encurtado</h4>
-                <button> <FiX size={28} color='#000'/> </button>
+                <button onClick={closeModal}><FiX size={28} color='#000'/></button> {/*Associando closeModal no btn */}
             </div>            
 
             <button className='modal-link'>
