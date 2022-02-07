@@ -5,13 +5,29 @@ import './home.css'
 import Menu from '../../components/Menu/menu';
 import LinkItem from '../../components/LinkItem/LinkItem';
 
+import api from '../../services/api'
+
 function Home() {
 
   const [link, setLink] = useState('')
   const [showModal, setShowModal] = useState(false)
+  const [data, setData] = useState({})
 
-  function shortLink(){   
-    setShowModal(true)
+  async function shortLink(){   
+    try{
+      const response = await api.post('/shorten',{
+        long_url: link
+      })
+
+        setData(response.data);
+        setShowModal(true)
+        setLink('')   /* Limpar input apos encurtar url */
+
+    }
+    catch{      
+      alert('Ops parece que algo deu errado')
+      setLink('') /* Limpar input apos erro */
+    }
   }
 
   return (
@@ -41,8 +57,8 @@ function Home() {
       { showModal && (
         <LinkItem
         closeModal={()=> setShowModal(false) } /* propriedade close modal */
-        />
-        
+        content={data}
+        />        
       )}
 
     </div>
