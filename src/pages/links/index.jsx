@@ -12,7 +12,7 @@ export default Links =>{
 
     useEffect(()=> {
         async function getLinks(){
-            const res = await getLinksSave('@linkCurto')
+            const res = await getLinksSave('key_links')
 
             if(res.length === 0){
 

@@ -23,7 +23,7 @@ function Home() {
         setData(response.data);
         setShowModal(true)
 
-        saveLink('@linkCurto', response.data)
+        saveLink('key_links', response.data)
 
         setLink('')   /* Limpar input apos encurtar url */
 
