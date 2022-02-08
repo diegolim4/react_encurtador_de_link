@@ -9,10 +9,11 @@ export async function getLinksSave(key){
 
 // Salvar um link no localstorage
 export async function saveLink(key, newLink){
-    let linkStored = await getLinksSave()
+    let linkStored = await getLinksSave(key)
 
     // Se já tiver link com o mesmo id
     const hasLink = linkStored.some(link => link.id === newLink.id)
+    
     if(hasLink){
         console.log('Link já existente');
         return
