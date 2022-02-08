@@ -6,6 +6,7 @@ import Menu from '../../components/Menu/menu';
 import LinkItem from '../../components/LinkItem/LinkItem';
 
 import api from '../../services/api'
+import {saveLink} from '../../services/storeLinks'
 
 function Home() {
 
@@ -21,6 +22,9 @@ function Home() {
 
         setData(response.data);
         setShowModal(true)
+
+        saveLink('@linkCurto', response.data)
+
         setLink('')   /* Limpar input apos encurtar url */
 
     }
