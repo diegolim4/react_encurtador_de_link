@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react'
 import {FiArrowLeft, FiLink, FiTrash} from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
-import { getLinksSave } from '../../services/storeLinks'
+import { getLinksSave, deleteLink } from '../../services/storeLinks'
 import LinkItem from '../../components/LinkItem/LinkItem'
 
 export default Links =>{
@@ -28,6 +28,10 @@ export default Links =>{
         setShowModal(true)
     }
 
+    function handleDelete(id){
+        deleteLink(myLinks, id)
+    }
+
     return(
         <div className='container-links'>
             <div className='Links-header'>
@@ -44,7 +48,7 @@ export default Links =>{
                         <FiLink size={18} color='#FFF' />
                         {link.long_url}
                     </button>
-                    <button className='link-delete'>
+                    <button className='link-delete' onClick={() => handleDelete(link.id)} >
                         <FiTrash size={24} color='#FF5454'/>
                     </button>
                 </div>                
