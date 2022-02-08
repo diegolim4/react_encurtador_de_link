@@ -10,13 +10,14 @@ export default Links =>{
     const [myLinks, setMyLinks] = useState([])
     const [data, setData] = useState({})
     const [showModal, setShowModal] = useState(false)
+    const [emptyList, setEmptyList] = useState(false) // state para quando a lista de link estiver vazia
 
     useEffect(()=> {
         async function getLinks(){
             const res = await getLinksSave('key_links')
 
             if(res.length === 0){
-
+             setEmptyList(true)
             }
             setMyLinks(res)
         }
@@ -32,7 +33,7 @@ export default Links =>{
         const resDel = await deleteLink(myLinks, id)
         
         if(resDel.length === 0){
-            
+            setEmptyList(true) // chamando o useState para quando a lista estiver fazia
         }
         setMyLinks(resDel) // Atualizo setMylinks com o resultado do delete
     }
@@ -46,6 +47,13 @@ export default Links =>{
                 
                 <h1>Meus Links</h1>
             </div>
+
+            {emptyList && (
+                <div className='links-item'>
+                    <h2 className='empty-text'>Nenhum link aqui...</h2>
+                </div>
+                )
+            }
 
             {myLinks.map(link =>(
                 <div key={link.id} className='links-item'>

@@ -56,6 +56,13 @@
     background: transparent;
 }
 
+.empty-text{
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    color: #fff;
+}
+
 @media (max-width: 715px){
     .container-links{
         width: 90%;
