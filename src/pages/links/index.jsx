@@ -28,8 +28,13 @@ export default Links =>{
         setShowModal(true)
     }
 
-    function handleDelete(id){
-        deleteLink(myLinks, id)
+    async function handleDelete(id){
+        const resDel = await deleteLink(myLinks, id)
+        
+        if(resDel.length === 0){
+            
+        }
+        setMyLinks(resDel) // Atualizo setMylinks com o resultado do delete
     }
 
     return(
